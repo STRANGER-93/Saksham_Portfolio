@@ -32,3 +32,7 @@ Run `npm run build` and deploy `dist/` to any static host such as Netlify, Verce
 ## Verification
 
 Check desktop and mobile layouts, project filters, expandable details, mobile menu, section links, résumé dialog, external repository links, and keyboard focus. Framer Motion honors reduced-motion preferences. No claims of employment, model accuracy, awards, or certifications are included.
+
+## Current profile assets
+
+The supplied CV is served at `/SAKSHAM_BHUJEL_CV.pdf`, and the portrait at `/saksham-bhujel.jpeg`. Email, LinkedIn, college, enrollment/graduation years, project contributions, and Protobytes Hackathon details are configured. Project screenshots and the NotesAPP/Bike Rental repositories remain pending. No live demos are configured.
