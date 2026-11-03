@@ -7,3 +7,34 @@
 .profile-photo{display:block;width:180px;height:215px;object-fit:cover;object-position:center 25%;border-radius:7px;border:1px solid var(--line);margin-bottom:24px}.education dl div{align-items:flex-start}.education dd{max-width:62%;line-height:1.6}.code-caption p{max-width:360px;line-height:1.7}@media(max-width:680px){.about-identity{display:flex;align-items:center;gap:20px}.profile-photo{width:105px;height:135px;margin-bottom:0}.about-identity .about-lead{font-size:20px;margin-bottom:0}}
 
 .profile-photo{width:180px;height:180px;aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:center 25%}@media(max-width:680px){.profile-photo{width:105px;height:105px;flex-shrink:0}}
+
+/* Restrained neon accents over the charcoal design. */
+:root{--accent:#70e9ff;--line:#29313c}
+header{border-bottom-color:#70e9ff20}
+.logo span{color:#70e9ff;text-shadow:0 0 14px #38cfff66}
+h1>span{color:#81eaff;text-shadow:0 0 32px #35cfff26}
+.contact-section h2 span{color:#bda0ff}
+.button.primary{background:#78e5f8;border-color:#78e5f8;color:#07171d;box-shadow:0 0 22px #39d8ff18}
+.button.primary:hover{background:#a0f1ff;box-shadow:0 0 28px #39d8ff38}
+.button.secondary:hover,.button.small:hover{border-color:#77dff6;box-shadow:0 0 18px #39d8ff18}
+nav a[aria-current]{color:#a9f1ff}
+nav a[aria-current]:after{width:5px;height:5px;box-shadow:0 0 9px #49ddff}
+.availability{border-color:#57ddcc35;background:#101e21;color:#b5d8d8}
+.availability>span,.status-dot{background:#6df4d1;box-shadow:0 0 9px #60e8c180}
+.hero-art{position:relative}
+.hero-art:before{content:'';position:absolute;inset:12% 4%;background:radial-gradient(ellipse,#4e58ce13,transparent 70%);pointer-events:none}
+.network g[stroke]{stroke:#556a91}
+.network g[stroke-width]{stroke:#78e7ff;filter:drop-shadow(0 0 3px #44ccff55)}
+.network>path[fill]{fill:#182d46;stroke:#87eaff;filter:drop-shadow(0 0 8px #53baff30)}
+.code-slash{color:#85e9ff}
+.eyebrow{color:#a6bddd}
+.skill-card,.project-card{transition:border-color .2s,box-shadow .2s}
+.skill-card:hover{border-color:#69d9f273;box-shadow:0 0 24px #47ccff09}
+.skill-card>svg{color:#92dffa}
+.project-card:hover{border-color:#b294ed80;box-shadow:0 0 25px #9870ef0d}
+.filters button[aria-pressed=true]{background:#14272e;color:#a7ecff;border-color:#4acde350}
+.profile-photo{border:2px solid #85dff0;box-shadow:0 0 0 5px #72dfff08,0 0 25px #62cfff20}
+.timeline-dot{background:#b79aff;box-shadow:0 0 9px #aa82ff55}
+.contact-item:hover{color:#8feaff}
+.contact-item>svg:first-child{color:#9fcbef}
+@media(prefers-reduced-motion:reduce){.skill-card,.project-card{transition:none}}
