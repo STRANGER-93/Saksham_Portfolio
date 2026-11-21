@@ -324,6 +324,144 @@ h1 > span {
   height: auto;
   display: block;
 }
+
+/* The original vector diagram doubles as an accessible disclosure trigger. */
+.orbital-disclosure {
+  position: relative;
+  min-width: 0;
+}
+.orbital-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  touch-action: manipulation;
+}
+.orbital-trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.orbit-paths,
+.orbit-nodes,
+.orbit-cube {
+  transition:
+    stroke 350ms ease,
+    filter 350ms ease,
+    fill 350ms ease;
+}
+.is-open .orbit-paths {
+  stroke: #598d9e;
+}
+.is-open .orbit-nodes {
+  stroke: var(--accent);
+}
+.is-open .orbit-nodes circle:nth-child(2),
+.is-open .orbit-nodes circle:nth-child(5) {
+  filter: drop-shadow(0 0 3px #67d5e870);
+}
+.is-open .orbit-cube {
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 5px #67d5e840);
+}
+.philosophy-slot {
+  overflow: hidden;
+  /* In-flow disclosure below the SVG avoids covering existing hero content. */
+}
+.philosophy-panel {
+  position: relative;
+  margin: 12px 0 20px;
+  padding: 22px;
+  border: 1px solid #67d5e84d;
+  border-radius: 6px;
+  background: #141d26f5;
+  box-shadow: 0 8px 20px #0002;
+}
+.philosophy-panel::before {
+  content: "";
+  position: absolute;
+  height: 13px;
+  width: 1px;
+  background: #67d5e880;
+  top: -13px;
+  left: 50%;
+}
+.philosophy-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.philosophy-heading > svg {
+  color: var(--accent);
+  margin-top: 3px;
+}
+.philosophy-heading h2 {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+.philosophy-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin: -4px -8px 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+}
+.philosophy-close:hover {
+  background: #ffffff0d;
+  color: var(--text);
+}
+.philosophy-panel p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.philosophy-panel p:last-child {
+  margin-bottom: 0;
+}
+.philosophy-panel p span {
+  color: var(--accent);
+}
+/* Use the outer gutter only when it can accommodate a readable side panel. */
+@media (min-width: 1680px) {
+  .philosophy-slot {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: min(364px, calc((100vw - 1200px) / 2 + 16px));
+    padding-left: 24px;
+  }
+  .philosophy-panel {
+    margin-top: 0;
+    padding: 20px;
+  }
+  .philosophy-panel::before {
+    top: 72px;
+    left: -25px;
+    width: 24px;
+    height: 1px;
+  }
+}
+@media (max-width: 560px) {
+  .philosophy-panel {
+    padding: 18px;
+  }
+  .philosophy-close {
+    width: 44px;
+    height: 44px;
+    margin-top: -10px;
+  }
+}
 .code-caption {
   display: flex;
   gap: 14px;

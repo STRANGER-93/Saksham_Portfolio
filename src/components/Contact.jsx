@@ -100,8 +100,7 @@ export default function Contact() {
         </div>
         <div className="footer-bottom">
           <p>
-            © {new Date().getFullYear()} Saksham Bhujel. Designed and built
-            with curiosity and code.
+            © {new Date().getFullYear()} Saksham Bhujel. All rights reserved.
           </p>
           <a href="#home" aria-label="Back to top">
             <ArrowUp size={17} />
