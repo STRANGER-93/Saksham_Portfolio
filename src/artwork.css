@@ -1,0 +1,115 @@
+/* Existing project artwork, preserved unchanged. */
+.preview-caption {
+  position: absolute;
+  left: 23px;
+  top: 19px;
+  font: 8px monospace;
+  letter-spacing: 1.6px;
+  opacity: 0.5;
+  z-index: 1;
+}
+.navya {
+  background: #25222e;
+  color: #dbc9f0;
+}
+.navya-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.navya-word {
+  font-size: 56px;
+  letter-spacing: -4px;
+  z-index: 1;
+  font-weight: 350;
+}
+.navya-word span {
+  display: block;
+  letter-spacing: 1px;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.navya-flower {
+  font-size: 100px;
+  font-weight: 200;
+  margin-left: 38px;
+  color: #a99abf;
+}
+.navya-orbit {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1px solid #66557255;
+  border-radius: 50%;
+  transform: rotate(-25deg) scaleY(0.6);
+}
+.knee {
+  background: #192321;
+  color: #9bbfb5;
+}
+.scan-visual svg {
+  height: 150px;
+  opacity: 0.55;
+}
+.scan-visual > span {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font: 8px monospace;
+  letter-spacing: 1px;
+}
+.scan-line {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background: #91cfab66;
+}
+.scan-visual:before {
+  content: "";
+  position: absolute;
+  inset: 40px 30%;
+  border: 1px solid #507969;
+  border-radius: 4px;
+}
+.stocks {
+  background: #1a232a;
+  color: #8db5cf;
+}
+.chart-visual {
+  width: 78%;
+}
+.chart-visual span {
+  font: 8px monospace;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+.jansewa {
+  background: #25261f;
+  color: #cac7a3;
+}
+.notes {
+  background: #232232;
+  color: #bbb1db;
+}
+.bikes {
+  background: #24282e;
+  color: #adbdd0;
+}
+.icon-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+.icon-visual svg {
+  height: 62px;
+  width: 62px;
+  stroke-width: 1;
+}
+.icon-visual span {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+}

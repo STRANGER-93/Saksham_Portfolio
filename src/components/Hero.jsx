@@ -1,6 +1,152 @@
-import { ArrowRight, ArrowDown, MapPin, Github } from 'lucide-react';
-import { Reveal, ResumeButton } from './UI';
-import { profile } from '../data/profile';
-export default function Hero(){return <section id="home" className="hero"><div className="hero-grid"><Reveal><div className="availability"><span/>Open to Internship Opportunities</div><p className="hero-name">HELLO, I’M SAKSHAM BHUJEL</p><h1>Building Practical<br/>Solutions<br/>Through <span>Code.</span></h1><p className="hero-description">I'm Saksham Bhujel, a Computer Engineering undergraduate passionate about software development, artificial intelligence, and solving real-world engineering problems.</p><div className="hero-buttons"><a href="#projects" className="button primary">Explore My Projects<ArrowRight size={17}/></a><ResumeButton/></div><a className="text-link contact-shortcut" href="#contact">Contact Me <ArrowUpRightIcon/></a></Reveal><Reveal className="hero-art"><div className="art-label"><span className="status-dot"/> A MIND IN DEVELOPMENT <span>01 — ∞</span></div><svg className="network" viewBox="0 0 480 380" role="img" aria-label="Abstract engineering network connecting software, machine learning, and intelligent systems"><defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#414856"/></pattern></defs><rect width="480" height="380" fill="url(#dots)"/><g fill="none" stroke="#384459"><path d="M240 65 380 145 380 260 240 340 100 260 100 145Z"/><path d="m240 65 0 275M100 145l280 115M380 145 100 260M100 145l140 80 140-80M100 260l140-80 140 80"/><ellipse cx="240" cy="205" rx="173" ry="65" transform="rotate(-30 240 205)"/><ellipse cx="240" cy="205" rx="173" ry="65" transform="rotate(30 240 205)"/></g><g fill="#101113" stroke="#8da9ed" strokeWidth="1.5">{[[240,65],[380,145],[380,260],[240,340],[100,260],[100,145]].map(([x,y])=><circle key={x+':'+y} cx={x} cy={y} r="5"/>)}</g><path d="m240 161 39 22v44l-39 23-39-23v-44Z" fill="#1c2a46" stroke="#a2baff"/><path d="m201 183 39 23 39-23m-39 23v44" fill="none" stroke="#a2baff"/><text x="49" y="96" fill="#9099a9" fontSize="10" fontFamily="monospace">IDEA</text><text x="365" y="325" fill="#9099a9" fontSize="10" fontFamily="monospace">IMPLEMENTATION</text></svg><div className="code-caption"><span className="code-slash">&lt;/&gt;</span><div><b>Curiosity → code → possibility</b><p>Exploring the intersection of software engineering, machine learning, and intelligent systems.</p></div><span className="tiny-plus">+</span></div></Reveal></div><div className="hero-bottom"><p><MapPin size={14}/> Based in Nepal <span className="divider"/> Computer Engineering · Final Year</p><a href="#about">SCROLL TO EXPLORE <ArrowDown size={14}/></a></div><div className="interest-strip"><span>SOFTWARE DEVELOPMENT</span><i>+</i><span>ARTIFICIAL INTELLIGENCE</span><i>+</i><span>MACHINE LEARNING</span><i>+</i><span>ENGINEERING CURIOSITY</span></div></section>;}
-function ArrowUpRightIcon(){return <ArrowRight size={14} style={{transform:'rotate(-35deg)'}}/>;}
-
+import { ArrowDown, MapPin, Github, Linkedin } from "lucide-react";
+import { Reveal, ResumeButton, ExternalLink } from "./UI";
+import { profile } from "../data/profile";
+export default function Hero() {
+  return (
+    <section id="home" className="hero">
+      <div className="hero-grid">
+        <Reveal>
+          <div className="availability">
+            <span />
+            Open to Internship Opportunities
+          </div>
+          <p className="hero-name">COMPUTER ENGINEERING UNDERGRADUATE</p>
+          <h1>
+            Saksham Bhujel<span>.</span>
+          </h1>
+          <p className="hero-description">
+            Building practical software solutions with a focus on AI, backend
+            engineering, and intelligent applications.
+          </p>
+          <div className="hero-buttons">
+            <a href="#projects" className="button primary">
+              View Projects
+            </a>
+            <ResumeButton />
+          </div>
+          <div className="hero-socials">
+            <ExternalLink href={profile.github}>
+              <Github size={18} />
+              GitHub
+            </ExternalLink>
+            <ExternalLink href={profile.linkedin}>
+              <Linkedin size={18} />
+              LinkedIn
+            </ExternalLink>
+          </div>
+        </Reveal>
+        <Reveal className="hero-art">
+          <div className="art-label">
+            <span className="status-dot" /> A MIND IN DEVELOPMENT{" "}
+            <span>01 — ∞</span>
+          </div>
+          <svg
+            className="network"
+            viewBox="0 0 480 380"
+            role="img"
+            aria-label="Abstract engineering network connecting software, machine learning, and intelligent systems"
+          >
+            <defs>
+              <pattern
+                id="dots"
+                width="24"
+                height="24"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="1" cy="1" r="1" fill="#414856" />
+              </pattern>
+            </defs>
+            <rect width="480" height="380" fill="url(#dots)" />
+            <g fill="none" stroke="#384459">
+              <path d="M240 65 380 145 380 260 240 340 100 260 100 145Z" />
+              <path d="m240 65 0 275M100 145l280 115M380 145 100 260M100 145l140 80 140-80M100 260l140-80 140 80" />
+              <ellipse
+                cx="240"
+                cy="205"
+                rx="173"
+                ry="65"
+                transform="rotate(-30 240 205)"
+              />
+              <ellipse
+                cx="240"
+                cy="205"
+                rx="173"
+                ry="65"
+                transform="rotate(30 240 205)"
+              />
+            </g>
+            <g fill="#101113" stroke="#8da9ed" strokeWidth="1.5">
+              {[
+                [240, 65],
+                [380, 145],
+                [380, 260],
+                [240, 340],
+                [100, 260],
+                [100, 145],
+              ].map(([x, y]) => (
+                <circle key={x + ":" + y} cx={x} cy={y} r="5" />
+              ))}
+            </g>
+            <path
+              d="m240 161 39 22v44l-39 23-39-23v-44Z"
+              fill="#1c2a46"
+              stroke="#a2baff"
+            />
+            <path
+              d="m201 183 39 23 39-23m-39 23v44"
+              fill="none"
+              stroke="#a2baff"
+            />
+            <text
+              x="49"
+              y="96"
+              fill="#9099a9"
+              fontSize="10"
+              fontFamily="monospace"
+            >
+              IDEA
+            </text>
+            <text
+              x="365"
+              y="325"
+              fill="#9099a9"
+              fontSize="10"
+              fontFamily="monospace"
+            >
+              IMPLEMENTATION
+            </text>
+          </svg>
+          <div className="code-caption">
+            <span className="code-slash">&lt;/&gt;</span>
+            <div>
+              <b>Curiosity → code → possibility</b>
+              <p>
+                Exploring the intersection of software engineering, machine
+                learning, and intelligent systems.
+              </p>
+            </div>
+            <span className="tiny-plus">+</span>
+          </div>
+        </Reveal>
+      </div>
+      <div className="hero-bottom">
+        <p>
+          <MapPin size={14} /> Kathmandu, Nepal <span className="divider" />{" "}
+          Computer Engineering · Final Year
+        </p>
+        <a href="#about">
+          SCROLL TO EXPLORE <ArrowDown size={14} />
+        </a>
+      </div>
+      <div className="interest-strip">
+        <span>SOFTWARE DEVELOPMENT</span>
+        <i>+</i>
+        <span>ARTIFICIAL INTELLIGENCE</span>
+        <i>+</i>
+        <span>MACHINE LEARNING</span>
+        <i>+</i>
+        <span>ENGINEERING CURIOSITY</span>
+      </div>
+    </section>
+  );
+}

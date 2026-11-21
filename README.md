@@ -1,38 +1,49 @@
 # Saksham Bhujel — Developer Portfolio
 
-A responsive, accessible portfolio for a final-year Computer Engineering undergraduate from Nepal. Built with React, Vite, Tailwind CSS, Framer Motion, and Lucide React. No backend or secrets are required.
+React, Vite, Tailwind CSS, Framer Motion, and Lucide React. Static site; no backend or credentials required.
 
-## Run locally
+## Development and Vercel
 
-Requires Node.js 20.19+ or 22.12+.
+Use Node.js 22.12+ (build also verified with Node 24).
 
 ```sh
-npm install
+npm ci
 npm run dev
 npm run build
 npm run preview
 ```
 
-## Customize
+Vercel: framework Vite, build command `npm run build`, output directory `dist`. Canonical domain: https://saksham-portfolio-theta-liard.vercel.app/. Changes in this checkout have not been deployed.
 
-- `src/data/profile.js`: email, LinkedIn, résumé URL, college, academic years, skills, and project-based experience. Replace `null` with verified values. Add a résumé PDF to `public/` and set `resumeUrl` to `/resume.pdf`.
-- `src/data/projects.js`: all six projects, correct repositories, descriptions, problem statements, contributions, screenshot paths, and optional live demos. Missing contributions are explicitly labeled; missing repository/demo links are not fabricated. Add screenshot files to `public/` and set `image` to their path. Current artwork is conceptual, not a screenshot.
-- `src/components/`: navigation, hero, background sections, projects, contact, and reusable UI.
-- `src/styles.css`: design tokens, layouts, responsive rules, and reduced-motion support.
-- `index.html`: title, description, and Open Graph metadata. Add an absolute `og:image` and `og:url` when your final domain and share image are available.
+## Editing the portfolio
 
-## Contact and résumé
+- `src/data/profile.js`: verified contact information, education, skills, and project-based experience.
+- `src/data/projects.js`: all six projects, descriptions, contributions, optional screenshots, repositories and demos. Optional `implementation`, `challenges`, `results`, and `limitations` fields appear in expanded details only when supplied. Do not add unsupported claims.
+- `src/components/`: existing section components and shared controls. The circular photo keeps its four social links, hover reveal, keyboard reveal, and always-visible touch controls.
+- `src/styles.css`: centralized charcoal/navy design tokens, typography, section styles, responsive layouts, and reduced-motion behavior.
+- `src/artwork.css`: original conceptual project artwork, separated from layout styling. No screenshots have been replaced.
+- `index.html`: canonical, title, description, Open Graph and Twitter metadata. An actual social sharing asset is still needed before adding image metadata.
 
-GitHub works immediately. Email and LinkedIn are visibly unavailable until configured. The résumé buttons open an accessible explanation until an actual file is configured. With a résumé URL configured they become download links. No form pretends to send a message. A contact backend is optional; if added later, validate inputs server-side, rate-limit submissions, add a honeypot or challenge, and keep email credentials on the server.
+The font stack uses Inter when installed, then Segoe UI and system fallbacks, without a remote font request. Main content uses 16px body text; labels use a smaller secondary scale. Accent color is reserved for actions, focus states and small highlights. Mobile layouts stack content deliberately rather than scaling the desktop down.
 
-## Deployment
+## Assets and missing information
 
-Run `npm run build` and deploy `dist/` to any static host such as Netlify, Vercel, Cloudflare Pages, or GitHub Pages. Use build command `npm run build` and output directory `dist`. For a subdirectory deployment set Vite's `base` option accordingly. All navigation is on-page and needs no router or backend. `.openai/hosting.json` records the associated private Sites deployment.
+The existing résumé (`public/SAKSHAM_BHUJEL_CV.pdf`), photo (`public/saksham-bhujel.jpeg`), and favicon (`public/favicon.svg`) are present. Screenshots, live demos, the NotesAPP and Bike Rental repository URLs, and a dedicated social sharing image remain unavailable. Grades, certifications, awards, detailed challenges and measured results have not been supplied and are not fabricated.
 
-## Verification
+## Verification — November 21, 2026
 
-Check desktop and mobile layouts, project filters, expandable details, mobile menu, section links, résumé dialog, external repository links, and keyboard focus. Framer Motion honors reduced-motion preferences. No claims of employment, model accuracy, awards, or certifications are included.
+- Production build passes.
+- Server rendering passes with all section anchors, six expandable project details, and configured social/contact/repository links present.
+- Compared project records, profile values, skills, experience, and original artwork with the previous Git revision: preserved (formatting and skill regrouping aside).
+- Confirmed configured local image, résumé and favicon assets exist.
+- Responsive breakpoints, keyboard focus styles and reduced-motion handling reviewed in source.
+- Browser interaction, mobile visual QA, console inspection and destination availability are not fully verified: the in-app browser timed out and Chrome automation failed. Run the manual checklist below before publishing.
 
-## Current profile assets
+### Manual browser checklist
 
-The supplied CV is served at `/SAKSHAM_BHUJEL_CV.pdf`, and the portrait at `/saksham-bhujel.jpeg`. Email, LinkedIn, college, enrollment/graduation years, project contributions, and Protobytes Hackathon details are configured. Project screenshots and the NotesAPP/Bike Rental repositories remain pending. No live demos are configured.
+1. Inspect at 320, 390, 768, 1024 and 1440px; confirm no horizontal scrolling.
+2. Navigate all section links. Open the mobile menu, select a link, and test Escape/focus return.
+3. Select All projects (6), Full-stack (4), and AI & ML (3); expand and collapse project details using mouse and keyboard.
+4. Hover and tab into the portrait; confirm all four social destinations. Check touch controls.
+5. Download the résumé and check email, GitHub and LinkedIn actions.
+6. Enable reduced motion and check focus visibility, text zoom, console errors and image loading.
