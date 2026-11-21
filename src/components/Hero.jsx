@@ -1,3 +1,4 @@
+import OrbitalDiagram from "./OrbitalDiagram";
 import { ArrowDown, MapPin, Github, Linkedin } from "lucide-react";
 import { Reveal, ResumeButton, ExternalLink } from "./UI";
 import { profile } from "../data/profile";
@@ -40,82 +41,7 @@ export default function Hero() {
             <span className="status-dot" /> A MIND IN DEVELOPMENT{" "}
             <span>01 — ∞</span>
           </div>
-          <svg
-            className="network"
-            viewBox="0 0 480 380"
-            role="img"
-            aria-label="Abstract engineering network connecting software, machine learning, and intelligent systems"
-          >
-            <defs>
-              <pattern
-                id="dots"
-                width="24"
-                height="24"
-                patternUnits="userSpaceOnUse"
-              >
-                <circle cx="1" cy="1" r="1" fill="#414856" />
-              </pattern>
-            </defs>
-            <rect width="480" height="380" fill="url(#dots)" />
-            <g fill="none" stroke="#384459">
-              <path d="M240 65 380 145 380 260 240 340 100 260 100 145Z" />
-              <path d="m240 65 0 275M100 145l280 115M380 145 100 260M100 145l140 80 140-80M100 260l140-80 140 80" />
-              <ellipse
-                cx="240"
-                cy="205"
-                rx="173"
-                ry="65"
-                transform="rotate(-30 240 205)"
-              />
-              <ellipse
-                cx="240"
-                cy="205"
-                rx="173"
-                ry="65"
-                transform="rotate(30 240 205)"
-              />
-            </g>
-            <g fill="#101113" stroke="#8da9ed" strokeWidth="1.5">
-              {[
-                [240, 65],
-                [380, 145],
-                [380, 260],
-                [240, 340],
-                [100, 260],
-                [100, 145],
-              ].map(([x, y]) => (
-                <circle key={x + ":" + y} cx={x} cy={y} r="5" />
-              ))}
-            </g>
-            <path
-              d="m240 161 39 22v44l-39 23-39-23v-44Z"
-              fill="#1c2a46"
-              stroke="#a2baff"
-            />
-            <path
-              d="m201 183 39 23 39-23m-39 23v44"
-              fill="none"
-              stroke="#a2baff"
-            />
-            <text
-              x="49"
-              y="96"
-              fill="#9099a9"
-              fontSize="10"
-              fontFamily="monospace"
-            >
-              IDEA
-            </text>
-            <text
-              x="365"
-              y="325"
-              fill="#9099a9"
-              fontSize="10"
-              fontFamily="monospace"
-            >
-              IMPLEMENTATION
-            </text>
-          </svg>
+          <OrbitalDiagram />
           <div className="code-caption">
             <span className="code-slash">&lt;/&gt;</span>
             <div>
