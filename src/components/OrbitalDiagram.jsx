@@ -169,7 +169,7 @@ export default function OrbitalDiagram() {
         >
           <div className="philosophy-heading">
             <Box size={20} aria-hidden="true" />
-            <h2 id="philosophy-title">The Philosophy Behind the Design</h2>
+            <h2 id="philosophy-title">Every meaningful solution begins with curiosity.</h2>
             <button
               type="button"
               className="philosophy-close"
@@ -179,8 +179,7 @@ export default function OrbitalDiagram() {
               <X size={18} aria-hidden="true" />
             </button>
           </div>
-          <p>Every meaningful solution begins with curiosity.</p>
-          <p>I believe engineering something is rarely a straight line.</p>
+          <p>"I believe engineering something is rarely a straight line.</p>
           <p>
             The central cube represents an idea waiting to take shape. The
             interconnected paths symbolize knowledge, experimentation, and the
@@ -189,7 +188,7 @@ export default function OrbitalDiagram() {
           <p>
             For me, engineering is the journey from{" "}
             <span>curiosity to code to possibility</span> — turning ideas into
-            practical solutions.
+            practical solutions."
           </p>
         </motion.section>
       </motion.div>

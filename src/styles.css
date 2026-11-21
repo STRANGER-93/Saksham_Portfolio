@@ -168,7 +168,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #c0d7ce;
+  color: #1eef5c;
   font-size: 0.75rem;
   line-height: 1.5;
 }
@@ -178,7 +178,7 @@ footer {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #91bca9;
+  background: #05ed05;
 }
 .skip-link {
   position: fixed;
@@ -260,12 +260,25 @@ nav a[aria-current]:after {
 }
 
 /* Introduction */
+.hero {
+  max-width: 1600px;
+}
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 56px;
-  align-items: center;
-  padding-block: 80px 52px;
+  align-items: start;
+  padding-block: 52px;
+}
+.hero h1 {
+  font-size: clamp(2.7rem, 4.8vw, 4.5rem);
+  line-height: 1.08;
+}
+.hero .availability {
+  padding: 8px 14px;
+  border: 1px solid #67d5e833;
+  border-radius: 24px;
+  background: #141d26;
 }
 .hero-name {
   font-size: 0.75rem;
@@ -305,6 +318,7 @@ h1 > span {
 }
 .hero-art {
   min-width: 0;
+  padding-top: 18px;
 }
 .art-label {
   display: flex;
@@ -339,6 +353,7 @@ h1 > span {
   background: transparent;
   color: inherit;
   touch-action: manipulation;
+  transition: transform 350ms ease;
 }
 .orbital-trigger:focus-visible {
   outline: 2px solid var(--accent);
@@ -452,36 +467,60 @@ h1 > span {
 .philosophy-panel p span {
   color: var(--accent);
 }
-/* Reserve a diagram and message column within the hero, not outside the viewport. */
-@media (min-width: 1400px) {
-  .hero {
-    max-width: 1600px;
+/* Size the reveal against its available space, rather than a very wide viewport. */
+.hero-art {
+  container-type: inline-size;
+}
+@container (min-width: 600px) {
+  .orbital-disclosure {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0fr);
+    align-items: start;
+    column-gap: 0;
+    transition: grid-template-columns 350ms ease, column-gap 350ms ease;
   }
-  .hero-grid {
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr);
-    gap: 40px;
+  .orbital-disclosure.is-open {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .68fr);
+    column-gap: 20px;
   }
-  .hero-art .art-label,
-  .hero-art .code-caption,
   .orbital-trigger {
-    width: calc(100% - 324px);
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 600px;
+    justify-self: center;
+    min-width: 0;
   }
   .philosophy-slot {
-    position: absolute;
-    right: 0;
-    top: 8px;
-    width: 324px;
-    padding-left: 24px;
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    width: 100%;
   }
   .philosophy-panel {
-    margin-top: 0;
-    padding: 20px;
+    /* Keep text wrapping stable while the message column animates from zero. */
+    width: calc((100cqw - 20px) * .404762);
+    margin-top: 8px;
+    padding: 18px;
   }
   .philosophy-panel::before {
-    top: 72px;
-    left: -25px;
-    width: 24px;
+    top: 64px;
+    left: -21px;
+    width: 20px;
     height: 1px;
+  }
+}
+/* Give tablet/laptop diagrams a complete row so both columns remain readable. */
+@media (min-width: 700px) and (max-width: 1499px) {
+  .hero .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero .hero-art {
+    width: 100%;
+    max-width: 960px;
+    margin-inline: auto;
+  }
+  .hero-grid > :first-child {
+    max-width: 700px;
   }
 }
 @media (max-width: 560px) {
@@ -1122,7 +1161,7 @@ dialog form {
 /* Intentional tablet and mobile layouts */
 @media (min-width: 1440px) {
   .hero-grid {
-    padding-top: 96px;
+    padding-top: 52px;
   }
 }
 @media (max-width: 960px) {

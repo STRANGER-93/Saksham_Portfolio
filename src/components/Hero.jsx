@@ -1,7 +1,6 @@
 import OrbitalDiagram from "./OrbitalDiagram";
-import { ArrowDown, MapPin, Github, Linkedin } from "lucide-react";
-import { Reveal, ResumeButton, ExternalLink } from "./UI";
-import { profile } from "../data/profile";
+import { ArrowDown, ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
+import { Reveal, ResumeButton } from "./UI";
 export default function Hero() {
   return (
     <section id="home" className="hero">
@@ -11,29 +10,23 @@ export default function Hero() {
             <span />
             Open to Internship Opportunities
           </div>
-          <p className="hero-name">COMPUTER ENGINEERING UNDERGRADUATE</p>
+          <p className="hero-name">HELLO, I’M SAKSHAM BHUJEL</p>
           <h1>
-            Saksham Bhujel<span>.</span>
+            Building Practical<br />Solutions<br />Through <span>Code.</span>
           </h1>
           <p className="hero-description">
-            Building practical software solutions with a focus on AI, backend
-            engineering, and intelligent applications.
+            I'm Saksham Bhujel, a Computer Engineering undergraduate passionate
+            about software development, artificial intelligence, and solving
+            real-world engineering problems.
           </p>
           <div className="hero-buttons">
             <a href="#projects" className="button primary">
-              View Projects
+              Explore My Projects <ArrowRight size={17} />
             </a>
             <ResumeButton />
           </div>
           <div className="hero-socials">
-            <ExternalLink href={profile.github}>
-              <Github size={18} />
-              GitHub
-            </ExternalLink>
-            <ExternalLink href={profile.linkedin}>
-              <Linkedin size={18} />
-              LinkedIn
-            </ExternalLink>
+            <a href="#contact">Contact Me <ArrowUpRight size={16} /></a>
           </div>
         </Reveal>
         <Reveal className="hero-art">
