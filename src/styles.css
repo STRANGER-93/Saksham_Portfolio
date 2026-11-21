@@ -344,6 +344,15 @@ h1 > span {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
+.orbital-trigger .network {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 480 / 420;
+}
+.orbit-cube path {
+  transition: fill 350ms ease;
+}
 .orbit-paths,
 .orbit-nodes,
 .orbit-cube {
@@ -353,18 +362,29 @@ h1 > span {
     fill 350ms ease;
 }
 .is-open .orbit-paths {
-  stroke: #598d9e;
+  stroke: #67d5e8;
+  filter: drop-shadow(0 0 3px #43d9ff80);
 }
 .is-open .orbit-nodes {
   stroke: var(--accent);
+  filter: drop-shadow(0 0 5px #43d9ffb3);
 }
 .is-open .orbit-nodes circle:nth-child(2),
 .is-open .orbit-nodes circle:nth-child(5) {
   filter: drop-shadow(0 0 3px #67d5e870);
 }
 .is-open .orbit-cube {
-  stroke: var(--accent);
-  filter: drop-shadow(0 0 5px #67d5e840);
+  stroke: #83efff;
+  filter: drop-shadow(0 0 8px #38d9ff99) drop-shadow(0 0 18px #38d9ff40);
+}
+.is-open .cube-top {
+  fill: #208cac;
+}
+.is-open .cube-left {
+  fill: #17536b;
+}
+.is-open .cube-right {
+  fill: #123e58;
 }
 .philosophy-slot {
   overflow: hidden;
@@ -432,13 +452,25 @@ h1 > span {
 .philosophy-panel p span {
   color: var(--accent);
 }
-/* Use the outer gutter only when it can accommodate a readable side panel. */
-@media (min-width: 1680px) {
+/* Reserve a diagram and message column within the hero, not outside the viewport. */
+@media (min-width: 1400px) {
+  .hero {
+    max-width: 1600px;
+  }
+  .hero-grid {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr);
+    gap: 40px;
+  }
+  .hero-art .art-label,
+  .hero-art .code-caption,
+  .orbital-trigger {
+    width: calc(100% - 324px);
+  }
   .philosophy-slot {
     position: absolute;
-    left: 100%;
-    top: 0;
-    width: min(364px, calc((100vw - 1200px) / 2 + 16px));
+    right: 0;
+    top: 8px;
+    width: 324px;
     padding-left: 24px;
   }
   .philosophy-panel {

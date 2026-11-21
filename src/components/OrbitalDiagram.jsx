@@ -72,7 +72,7 @@ export default function OrbitalDiagram() {
       >
         <svg
           className="network"
-          viewBox="0 0 480 380"
+          viewBox="0 0 480 420"
           role="img"
           aria-label="Abstract engineering network connecting software, machine learning, and intelligent systems"
         >
@@ -83,71 +83,64 @@ export default function OrbitalDiagram() {
               height="24"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="1" cy="1" r="1" fill="#414856" />
+              <circle cx="1" cy="1" r="1" fill="#356577" />
             </pattern>
           </defs>
-          <rect width="480" height="380" fill="url(#dots)" />
-          <g className="orbit-paths" fill="none" stroke="#384459">
-            <path d="M240 65 380 145 380 260 240 340 100 260 100 145Z" />
-            <path d="m240 65 0 275M100 145l280 115M380 145 100 260M100 145l140 80 140-80M100 260l140-80 140 80" />
+          <rect width="480" height="420" fill="url(#dots)" />
+          <g className="orbit-paths" fill="none" stroke="#42788b">
+            <path d="M240 45 405 135 405 285 240 380 75 285 75 135Z" />
+            <path d="M240 45V380M75 135 405 285M405 135 75 285M75 135l165 95 165-95M75 285l165-95 165 95" />
             <ellipse
               cx="240"
-              cy="205"
-              rx="173"
-              ry="65"
-              transform="rotate(-30 240 205)"
+              cy="212"
+              rx="192"
+              ry="76"
+              transform="rotate(-30 240 212)"
             />
             <ellipse
               cx="240"
-              cy="205"
-              rx="173"
-              ry="65"
-              transform="rotate(30 240 205)"
+              cy="212"
+              rx="192"
+              ry="76"
+              transform="rotate(30 240 212)"
             />
           </g>
           <g
             className="orbit-nodes"
             fill="#101113"
-            stroke="#8da9ed"
-            strokeWidth="1.5"
+            stroke="#67d5e8"
+            strokeWidth="2.5"
           >
             {[
-              [240, 65],
-              [380, 145],
-              [380, 260],
-              [240, 340],
-              [100, 260],
-              [100, 145],
+              [240, 45],
+              [405, 135],
+              [405, 285],
+              [240, 380],
+              [75, 285],
+              [75, 135],
             ].map(([x, y]) => (
-              <circle key={x + ":" + y} cx={x} cy={y} r="5" />
+              <circle key={x + ":" + y} cx={x} cy={y} r="7" />
             ))}
           </g>
-          <path
-            className="orbit-cube"
-            d="m240 161 39 22v44l-39 23-39-23v-44Z"
-            fill="#1c2a46"
-            stroke="#a2baff"
-          />
-          <path
-            className="orbit-cube"
-            d="m201 183 39 23 39-23m-39 23v44"
-            fill="none"
-            stroke="#a2baff"
-          />
+          <g className="orbit-cube" stroke="#67d5e8" strokeWidth="1.5" strokeLinejoin="round">
+            <path className="cube-top" d="M240 158 292 188 240 218 188 188Z" fill="#176681" />
+            <path className="cube-left" d="M188 188 240 218V278L188 248Z" fill="#143d52" />
+            <path className="cube-right" d="M240 218 292 188V248L240 278Z" fill="#102e42" />
+          </g>
           <text
-            x="49"
-            y="96"
-            fill="#9099a9"
-            fontSize="10"
+            x="12"
+            y="92"
+            fill="#9fcbd9"
+            fontSize="11"
             fontFamily="monospace"
           >
             IDEA
           </text>
           <text
-            x="365"
-            y="325"
-            fill="#9099a9"
-            fontSize="10"
+            x="320"
+            y="402"
+            fill="#9fcbd9"
+            fontSize="11"
             fontFamily="monospace"
           >
             IMPLEMENTATION
@@ -162,6 +155,7 @@ export default function OrbitalDiagram() {
         inert={!open}
         transition={{
           duration: reduceMotion ? 0 : 0.35,
+          delay: open && !reduceMotion ? 0.16 : 0,
           ease: [0.22, 1, 0.36, 1],
         }}
       >
